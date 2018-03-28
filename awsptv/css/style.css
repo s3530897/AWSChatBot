@@ -18,12 +18,76 @@ a:hover,a:active{text-decoration:underline;color:#3db1fa;}
 
 
 .box{width:100%; overflow:hidden;}
-.box-3 dl{ display:table; position:absolute; bottom:5px; right:5px; width:400px; background:#fff;box-shadow: 0 0 7px rgba(0,0,0,.3); border-radius:3px; }
-.box-3 dl dd{height: 40px;line-height: 40px; color:#fff; font-size: 16px;position: relative;padding-left: 10px; background:#06b5ff; border-radius:3px 3px 0 0;}
-.box-3 dl dd b{ display: block; height:40px; width:40px; position:absolute; top:0; right:0; cursor:pointer;}
+.box-3 dl{
+	display: table;
+	position: absolute;
+	bottom: 5px;
+	right: 74px;
+	width: 400px;
+	background: #fff;
+	box-shadow: 0 0 0px rgba(0,0,0,.3);
+	border-radius: 3px;
+}
+.box-3 dl dd{height: 40px;line-height: 40px; color:#fff; font-size: 16px;position: relative;padding-left: 10px; background:#06b5ff; border-radius:0px 0px 0 0;}
+.box-3 dl dd b{
+	display: block;
+	height: 40px;
+	width: 42px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	cursor: pointer;
+}
 .box-3 dl dd b.up{ background:url(../images/up.png) center center no-repeat;}
 .box-3 dl dd b.down{ background:url(../images/down.png) center center no-repeat;}
-.box-3 dl ul{padding:0 10px; height:425px;}
+.box-3 dl ul{padding:0 0px; height:425px;}
 .box-3 dl ul li{ height:40px; line-height:40px; border-top: 1px dashed #EDEDED;}
 .box-3 dl ul li span{ display:inline-block; width:70px; text-align:right;}
 .box-3 dl ul li i{ font-style:normal; margin-left:10px;}
+p.userRequest {
+			margin: 4px;
+			padding: 4px 10px 4px 10px;
+			border-radius: 4px;
+			min-width: 50%;
+			max-width: 85%;
+			float: left;
+			background-color: #7d7;
+		}
+
+		p.lexResponse {
+			margin: 4px;
+			padding: 4px 10px 4px 10px;
+			border-radius: 4px;
+			text-align: right;
+			min-width: 50%;
+			max-width: 85%;
+			float: right;
+			background-color: #bbf;
+			font-style: italic;
+		}
+
+		p.lexError {
+			margin: 4px;
+			padding: 4px 10px 4px 10px;
+			border-radius: 4px;
+			text-align: right;
+			min-width: 50%;
+			max-width: 85%;
+			float: right;
+			background-color: #f77;
+		}
+		input#wisdom {
+			padding: 4px;
+			font-size: 1em;
+			width: 400px
+		}
+
+		input::placeholder {
+			color: #ccc;
+			font-style: italic;
+		}
+		.align-center{ 
+		margin:0 auto;
+		width:380px; 
+		text-align:center;  
+		} 
