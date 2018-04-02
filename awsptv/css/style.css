@@ -16,11 +16,32 @@ a{text-decoration:none;}
 a:link,a:visited{text-decoration:none;color:#444;}
 a:hover,a:active{text-decoration:underline;color:#3db1fa;}
 
-
+.footer{
+	width:100%;
+	height:100%;
+	background:#000;
+}
+.toppicture1{
+	width:100%;
+	height:75%;
+}
+.mainclick{
+	position: absolute;
+	margin-top: 30%;
+	margin-left: 45%;
+}
+.toptitle{
+	width:100%;
+	height:15%;
+}
+.imgtoppicture1{
+ 	width:100%;
+	height:100%;
+}
 .box{width:100%; overflow:hidden;}
 .box-3 dl{
 	display: table;
-	position: absolute;
+	position: fixed;
 	bottom: 5px;
 	right: 74px;
 	width: 400px;
@@ -44,17 +65,12 @@ a:hover,a:active{text-decoration:underline;color:#3db1fa;}
 .box-3 dl ul li{ height:40px; line-height:40px; border-top: 1px dashed #EDEDED;}
 .box-3 dl ul li span{ display:inline-block; width:70px; text-align:right;}
 .box-3 dl ul li i{ font-style:normal; margin-left:10px;}
+requestTitle {
+			height: 20px;
+			size: 10px;
+			font-size:10px;
+			}
 p.userRequest {
-			margin: 4px;
-			padding: 4px 10px 4px 10px;
-			border-radius: 4px;
-			min-width: 50%;
-			max-width: 85%;
-			float: left;
-			background-color: #7d7;
-		}
-
-		p.lexResponse {
 			margin: 4px;
 			padding: 4px 10px 4px 10px;
 			border-radius: 4px;
@@ -62,10 +78,38 @@ p.userRequest {
 			min-width: 50%;
 			max-width: 85%;
 			float: right;
+		}
+p.userRequestI {
+			margin: 4px;
+			padding: 4px 10px 4px 10px;
+			border-radius: 4px;
+			text-align: right;
+			min-width: 50%;
+			max-width: 65%;
+			float: right;
+			background-color: #7d7;
+		}
+		p.lexResponse {
+			margin: 4px;
+			padding: 4px 10px 4px 10px;
+			border-radius: 4px;
+			text-align: left;
+			min-width: 50%;
+			max-width: 85%;
+			float: left;
+			font-style: italic;
+		}
+		p.lexResponseI {
+			margin: 4px;
+			padding: 4px 10px 4px 10px;
+			border-radius: 4px;
+			text-align: left;
+			min-width: 50%;
+			max-width: 65%;
+			float: left;
 			background-color: #bbf;
 			font-style: italic;
 		}
-
 		p.lexError {
 			margin: 4px;
 			padding: 4px 10px 4px 10px;
@@ -79,7 +123,7 @@ p.userRequest {
 		input#wisdom {
 			padding: 4px;
 			font-size: 1em;
-			width: 400px
+			width: 370px
 		}
 
 		input::placeholder {

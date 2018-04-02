@@ -12,19 +12,22 @@ $.fn.extend({
 			if ( $(this).hasClass("up") ){
 					$(this).removeClass("up").addClass("down");
 					$(".box-3 dl").find("ul").hide();	
-					$(".box-3 dl").animate({
-						left:w+"px",
-						top:h+"px"
-					},200);														
+					//$(".box-3 dl").animate({
+					//	left:w+"px",
+					//	top:h+"px"
+					//},200);														
 				}else{
 					$(this).removeClass("down").addClass("up");
 					$(".box-3 dl").find("ul").show();
-					$(".box-3 dl").animate({
-						left:(w-80)+"px",
-						top:h1+"px"
-					},200);						
+					//$(".box-3 dl").animate({
+					//	left:(w-80)+"px",
+					//	top:h1+"px"
+					//},200);						
 				}
 		
+		 });	
+		 $("#small_button2").click( function () {
+			$("#small_button").click();
 		 });		
     }
 	

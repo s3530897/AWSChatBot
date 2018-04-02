@@ -144,4 +144,113 @@ var xPage;
 			}else if(movePosition.toLowerCase() == 'both'){
 				thisAllMove();
 			}
-		})8
+		})
+
+2.
+<div class="align-center1">
+	<div id="conversation1" style="width: 380px; height: 400px; border: 0px solid #ccc; background-color: #eee; padding: 0px; overflow: scroll"></div>
+	<form id="chatform" style="margin-top: 0px" onsubmit="return pushChat1();">
+		<input type="text" id="wisdom1" size="55" value="" placeholder="Type something">
+	</form>
+    <script type="text/javascript">
+		// set the focus to the input box
+		document.getElementById("wisdom1").focus();
+
+		// Initialize the Amazon Cognito credentials provider
+		AWS.config.region = 'us-east-1'; // Region
+		AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+    	IdentityPoolId: 'us-east-1:52066b9a-c496-4dce-97b7-88864c326602',
+});
+
+		var lexruntime1 = new AWS.LexRuntime();
+		var lexUserId1 = 'chatbot-demo1' + Date.now();
+		var sessionAttributes1 = {};
+
+		function pushChat1() {
+
+			// if there is text to be sent...
+			var wisdomText1 = document.getElementById('wisdom1');
+			if (wisdomText1 && wisdomText1.value && wisdomText1.value.trim().length > 0) {
+
+				// disable input to show we're sending it
+				var wisdom1 = wisdomText1.value.trim();
+				wisdomText1.value = '...';
+				wisdomText1.locked = true;
+
+				// send it to the Lex runtime
+				var params1 = {
+					botAlias: '$LATEST',
+					botName: 'weatherdemo',
+					inputText: wisdom1,
+					userId: lexUserId1,
+					sessionAttributes: sessionAttributes1
+				};
+				showRequest1(wisdom1);
+				lexruntime1.postText(params, function(err, data) {
+					if (err) {
+						console.log(err, err.stack);
+						showError('Error:  ' + err.message + ' (see console for details)')
+					}
+					if (data) {
+						// capture the sessionAttributes for the next cycle
+						sessionAttributes1 = data.sessionAttributes;
+						// show response and/or error/dialog status
+						showResponse1(data);
+					}
+					// re-enable input
+					wisdomText1.value = '';
+					wisdomText1.locked = false;
+				});
+			}
+			// we always cancel form submission
+			return false;
+		}
+
+		function showRequest1(daText) {
+
+			var conversationDiv1 = document.getElementById('conversation1');
+			var requestPara1 = document.createElement("P");
+			requestPara1.className = 'userRequest';
+			requestPara1.appendChild(document.createTextNode(daText));
+			conversationDiv1.appendChild(requestPara);
+			conversationDiv1.scrollTop = conversationDiv1.scrollHeight;
+		}
+
+		function showError1(daText) {
+
+			var conversationDiv1 = document.getElementById('conversation1');
+			var errorPara1 = document.createElement("P");
+			errorPara1.className = 'lexError';
+			errorPara1.appendChild(document.createTextNode(daText));
+			conversationDiv1.appendChild(errorPara);
+			conversationDiv1.scrollTop = conversationDiv1.scrollHeight;
+		}
+
+		function showResponse1(lexResponse) {
+
+			var conversationDiv1 = document.getElementById('conversation1');
+			var responsePara1 = document.createElement("P");
+			responsePara1.className = 'lexResponse';
+			if (lexResponse1.message) {
+				responsePara1.appendChild(document.createTextNode(lexResponse1.message));
+				responsePara1.appendChild(document.createElement('br'));
+			}
+			if (lexResponse1.dialogState === 'ReadyForFulfillment') {
+				responsePara1.appendChild(document.createTextNode(
+					'Ready for fulfillment'));
+				// TODO:  show slot values
+			} else {
+				responsePara1.appendChild(document.createTextNode(
+					'(' + lexResponse1.dialogState + ')'));
+			}
+			conversationDiv1.appendChild(responsePara);
+			conversationDiv1.scrollTop = conversationDiv1.scrollHeight;
+		}
+	</script>
+    </div>
+
+3.
+else {
+				responseParaI.appendChild(document.createTextNode(
+					'(' + lexResponse.dialogState + ')'));
+			}
