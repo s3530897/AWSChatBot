@@ -29,7 +29,7 @@
 		<dd>aws ChatBot<b id="small_button" class="up"></b></dd>
 		<ul>
 			<div class="align-center">
-	<div id="conversation" style="width: 380px; height: 380px; border: 0px solid #ccc; background-color: #FFF; padding: 0px; overflow: scroll"></div>
+	<div id="conversation" style="width: 380px; height: 380px; border: 0px solid #ccc; background-color: #FFF; padding: 0px; overflow-y: scroll"></div>
 	<form id="chatform" style="margin-top: 0px" onsubmit="return pushChat();">
 		<input type="text" id="wisdom" size="55" value="" placeholder="Type something">
 	</form>
@@ -49,7 +49,16 @@
 		var lexruntime = new AWS.LexRuntime();
 		var lexUserId = 'chatbot-demo' + Date.now();
 		var sessionAttributes = {};
-
+		
+		
+		
+		function submitvalue(value){
+			var wisdomText = document.getElementById('wisdom');
+			wisdomText.value=value;
+			var formText=document.getElementById('chatform');
+			formText.submit();
+		}
+		
 		function pushChat() {
 
 			// if there is text to be sent...
@@ -146,6 +155,28 @@
 			//responsePara.appendChild(responseBlack);
 			responsePara.appendChild(responseTitle);
 			responsePara.appendChild(responseParaI);
+			if(lexResponse.responseCard){
+					var responseCardPic = document.createElement("img");
+					responseCardPic.width=300;
+					responseCardPic.src=lexResponse.responseCard.genericAttachments[0].imageUrl;
+					responsePara.appendChild(responseCardPic);
+					var i=0;
+					while(lexResponse.responseCard.genericAttachments[0].buttons[i]){
+						var responseButton = document.createElement("input");
+						responseButton.id="sub1";
+						responseButton.width=280;
+						responseButton.style.background="url(images/mainclick.jpg)";
+						responseButton.value=lexResponse.responseCard.genericAttachments[0].buttons[i].text;
+						responseButton.onclick=function(){
+							var wisdomText = document.getElementById('wisdom');
+							wisdomText.value=value;
+							var formText=document.getElementById('chatform');
+							formText.submit();
+							};
+						responsePara.appendChild(responseButton);
+						i++;
+					}
+				}
 			conversationDiv.appendChild(responsePara);
 			conversationDiv.scrollTop = conversationDiv.scrollHeight;
 		}
