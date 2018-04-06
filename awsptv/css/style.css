@@ -49,7 +49,7 @@ a:hover,a:active{text-decoration:underline;color:#3db1fa;}
 	box-shadow: 0 0 0px rgba(0,0,0,.3);
 	border-radius: 3px;
 }
-.box-3 dl dd{height: 40px;line-height: 40px; color:#fff; font-size: 16px;position: relative;padding-left: 10px; background:#06b5ff; border-radius:0px 0px 0 0;}
+.box-3 dl dd{height: 40px;line-height: 40px; color:#fff; font-size: 16px;position: relative;padding-left: 10px; background:#d92c27; border-radius:0px 0px 0 0;}
 .box-3 dl dd b{
 	display: block;
 	height: 40px;
@@ -87,7 +87,8 @@ p.userRequestI {
 			min-width: 50%;
 			max-width: 65%;
 			float: right;
-			background-color: #7d7;
+			background-color: #5ebbff;
+			font-family: Helvetica, Arial, sans-serif;
 		}
 		p.lexResponse {
 			margin: 4px;
@@ -97,7 +98,6 @@ p.userRequestI {
 			min-width: 50%;
 			max-width: 85%;
 			float: left;
-			font-style: italic;
 		}
 		p.lexResponseI {
 			margin: 4px;
@@ -107,8 +107,8 @@ p.userRequestI {
 			min-width: 50%;
 			max-width: 65%;
 			float: left;
-			background-color: #bbf;
-			font-style: italic;
+			background-color: #a1eefe;
+			font-family: Helvetica, Arial, sans-serif;
 		}
 		p.lexError {
 			margin: 4px;
@@ -123,12 +123,14 @@ p.userRequestI {
 		input#wisdom {
 			padding: 4px;
 			font-size: 1em;
-			width: 370px
+			width: 320px
+		}
+		input#wissdomsubmit{
+			padding: 5px;
 		}
 
 		input::placeholder {
 			color: #ccc;
-			font-style: italic;
 		}
 		.align-center{ 
 		margin:0 auto;

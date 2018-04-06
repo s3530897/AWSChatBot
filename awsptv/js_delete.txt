@@ -254,12 +254,3 @@ else {
 				responseParaI.appendChild(document.createTextNode(
 					'(' + lexResponse.dialogState + ')'));
 			}
-
-
-function submitvalue(value){
-			var wisdomText = document.getElementById('wisdom');
-			wisdomText.value=value;
-			var formText=document.getElementById('chatform');
-			formText.submit();
-		}
-		

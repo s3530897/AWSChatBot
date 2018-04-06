@@ -27,12 +27,9 @@ $.fn.extend({
 		
 		 });	
 		 $("#small_button2").click( function () {
-			$("#small_button").click();
-		 });
-		 $("#sub1").click(function(){
-		 	$("#wisdom").value="myki";
-			$("#chatform").submit();
-		 });		
+			 $("#chatform").submit();
+				//$("#small_button").click();
+		 });			
     }
 	
 }); 
