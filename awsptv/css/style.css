@@ -1,14 +1,14 @@
 *{padding:0;margin:0;}
 div,dl,dt,dd,form,h1,h2,h3,h4,h5,h6,img,ol,ul,li,table,th,td,p,span,a{border:0;}
 img,input{border:none;vertical-align:middle;}
-body{font-family:'Microsoft YaHei',"微软雅黑", YaHei,Arial,Helvetica,sans-serif;font-size:14px;background:#fff;color:#444;}
+body{font-family:Helvetica, Arial, sans-serif;font-size:14px;background:#fff;color:#444;}
 body{overflow:scroll;}
 ul,ol{list-style-type:none;}
 th,td,input{font-size:14px;}
 h3{font-size:14px;}
 button{border:none;cursor:pointer;font-size:14px;background-color:transparent;}
 select{border-width:1px;_zoom:1;border-style:solid;padding-top:2px;font-size:12px;}
-input, button {font-family: "微软雅黑";outline: 0;border: 0; color:#666;}
+input, button {font-family:Helvetica, Arial, sans-serif;outline: 0;border: 0; color:#666;}
 .clear{clear:both;font-size:1px;height:0;visibility:hidden;line-height:0;}
 .clearfix:after{content:"";display:block;clear:both;}
 .clearfix{zoom:1;}
@@ -45,7 +45,7 @@ a:hover,a:active{text-decoration:underline;color:#3db1fa;}
 	bottom: 5px;
 	right: 74px;
 	width: 400px;
-	background: #fff;
+	background: #cbcbcb;
 	box-shadow: 0 0 0px rgba(0,0,0,.3);
 	border-radius: 3px;
 }
@@ -61,10 +61,10 @@ a:hover,a:active{text-decoration:underline;color:#3db1fa;}
 }
 .box-3 dl dd b.up{ background:url(../images/up.png) center center no-repeat;}
 .box-3 dl dd b.down{ background:url(../images/down.png) center center no-repeat;}
-.box-3 dl ul{padding:0 0px; height:425px;}
-.box-3 dl ul li{ height:40px; line-height:40px; border-top: 1px dashed #EDEDED;}
-.box-3 dl ul li span{ display:inline-block; width:70px; text-align:right;}
-.box-3 dl ul li i{ font-style:normal; margin-left:10px;}
+.box-3 dl ul{padding:0 0px; height:425px;background: #cbcbcb;}
+.box-3 dl ul li{ height:40px; line-height:40px; border-top: 1px dashed #EDEDED;background: #cbcbcb;}
+.box-3 dl ul li span{ display:inline-block; width:70px; text-align:right;background: #cbcbcb;}
+.box-3 dl ul li i{ font-style:normal; margin-left:10px;background: #cbcbcb;}
 requestTitle {
 			height: 20px;
 			size: 10px;
@@ -87,8 +87,11 @@ p.userRequestI {
 			min-width: 50%;
 			max-width: 65%;
 			float: right;
-			background-color: #5ebbff;
+			color:#fff;
+			background-color: #d92c27;
 			font-family: Helvetica, Arial, sans-serif;
+			font-size: 12px;
+			line-height:1.2;
 		}
 		p.lexResponse {
 			margin: 4px;
@@ -100,6 +103,12 @@ p.userRequestI {
 			float: left;
 		}
 		p.lexResponseI {
+			background-color: #f1f0f0;
+			font-family: Helvetica, Arial, sans-serif;
+			font-size: 12px;
+			line-height:1.2;
+		}
+		p.lexResponseDialog {
 			margin: 4px;
 			padding: 4px 10px 4px 10px;
 			border-radius: 4px;
@@ -107,8 +116,10 @@ p.userRequestI {
 			min-width: 50%;
 			max-width: 65%;
 			float: left;
-			background-color: #a1eefe;
+			background-color: #f1f0f0;
 			font-family: Helvetica, Arial, sans-serif;
+			font-size: 12px;
+			line-height:1.2;
 		}
 		p.lexError {
 			margin: 4px;
@@ -120,13 +131,30 @@ p.userRequestI {
 			float: right;
 			background-color: #f77;
 		}
+		.responseButtontext{
+			border:1px solid #d92c27;
+			background-color: #f1f0f0;
+			font-family: Helvetica, Arial, sans-serif;
+			font-size: 12px;
+			line-height:1.2;
+			width:180px;
+			color:#d92c27;
+		}
+		button{
+			padding: 2px 4px 2px 4px;
+			font-family: Helvetica, Arial, sans-serif;
+			font-size: 12px;
+			line-height:1.2;
+		}
 		input#wisdom {
-			padding: 4px;
+			padding: 5px;
 			font-size: 1em;
-			width: 320px
+			width: 295px
 		}
 		input#wissdomsubmit{
-			padding: 5px;
+			padding: 0px;
+			float:left;
+			background-color: #cbcbcb;
 		}
 
 		input::placeholder {
@@ -134,6 +162,7 @@ p.userRequestI {
 		}
 		.align-center{ 
 		margin:0 auto;
+		padding: 10px,0px,10px,0px;
 		width:380px; 
 		text-align:center;  
 		} 
